@@ -1,1 +1,1 @@
-/home/sakis/rustlernen/ass/target/debug/ass: /home/sakis/rustlernen/ass/src/main.rs
+/home/sakis/rustlernen/assignments/ass/target/debug/ass: /home/sakis/rustlernen/assignments/ass/src/main.rs

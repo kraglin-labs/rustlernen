@@ -1,1 +1,1 @@
-/home/sakis/rustlernen/ass1/target/debug/fibonacci: /home/sakis/rustlernen/ass1/src/main.rs
+/home/sakis/rustlernen/assignments/ass1/target/debug/fibonacci: /home/sakis/rustlernen/assignments/ass1/src/main.rs
