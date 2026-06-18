@@ -16,7 +16,6 @@ fn to_celcius(fahrenheit: i32) -> i32 {
 }
 
 fn convert (value: i32, unit: char) -> i32 {
-	//let nunit = char::to_lowercase(unit);
 	if unit == 'f' || unit == 'F' {
 		to_celcius(value)
 	} else if unit == 'c' || unit == 'C'{
