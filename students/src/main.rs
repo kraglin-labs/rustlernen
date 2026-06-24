@@ -1,7 +1,12 @@
 mod input_utils;
+use serde::{Serialize, Deserialize};
+use std::fs::File;
+use std::io::Write;
+use std::fs;
+
 
 #[allow(dead_code)]
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 struct Students {
     name: String,
     age: u8,
@@ -9,14 +14,14 @@ struct Students {
     courses: Vec<Courses>,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 struct Courses {
     name: String,
     code: String,
     score: Vec<Tests>,
 }
 #[allow(dead_code)]
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 struct Tests {
     first_test: i32,
     second_test: i32,
@@ -89,9 +94,50 @@ impl Tests {
     }
 
 }
+fn save_to_file(students: &Vec<Students>) -> std::io::Result<()> {
+    let json_string = serde_json::to_string_pretty(students).unwrap();
+    let file = File::create("student_data.json");
+
+    file.expect("REASON").write_all(json_string.as_bytes())?;
+    println!("Saved to student_data.json");
+    Ok(())
+}
+
+fn load_from_file() -> Vec<Students> {
+    let data = match fs::read_to_string("student_data.json") {
+        Ok(content) => content,
+        Err(_) => return Vec::new(),
+    };
+
+    serde_json::from_str(&data).unwrap_or_else(|_| Vec::new())
+}
+
+#[allow(dead_code)]
+fn edit_result(students: &mut Vec<Students>, matric: u32, course_code: &str, new_exam_score: i32) {
+    if let Some(student) = students.iter_mut().find(|s| s.matric_number == matric) {
+        if let Some(course) = student.courses.iter_mut().find(|c| c.code == course_code) {
+            if let Some(test) = course.score.first_mut() {
+                test.exam = new_exam_score;
+                println!("Updated {}'s {} exam score to {}", student.name, course_code, new_exam_score);
+            }
+        }
+    } else {
+        println!("Student not found")
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 fn main() {
-    let mut students: Vec<Students> = Vec::new();
+    let mut students: Vec<Students> = load_from_file();
 
     let mth101 = Courses::new("Elementary Mathematics I", "MTH101");
     let phy101 = Courses::new("General Physics I", "PHY101");
@@ -113,44 +159,47 @@ fn main() {
             break;
         }
 
-        println!("Enter student age:");
         let mut age: u8 = 0;
-        scan!(&mut age);
-        if age < 16 || age > 100 {
-            println!("Age must be between 16 and 100");
-            continue;
+        loop {
+            println!("Enter student age:");
+            scan!(&mut age);
+            if age >= 16 && age <= 100 {
+                break; 
+            }
+            println!("Age must be between 16 and 100. Please try again:");
         }
 
-        println!("Enter student's matriculation number:");
         let mut matric_number: u32 = 0;
-        scan!(&mut matric_number);
-        if *&matric_number > 999999 || *&matric_number < 100000 {
-            println!("Matric number must be 6 digits");
-            continue;
+        loop {
+            println!("Enter student's matriculation number:");
+            scan!(&mut matric_number);
+            if matric_number <= 999999 && matric_number >= 100000 {
+                break; 
+            }
+            println!("Matric number must be exactly 6 digits. Please try again:");
         }
 
         let mut student = Students::new(&name, age, matric_number);
         
         for course in &first_year_courses {
             let mut subject = course.clone();
-            let mut first_test: i32 = 0;
-            let mut second_test: i32 = 0;
-            let mut exam: i32 = 0;
+            let mut first_test: i32;
+            let mut second_test: i32;
+            let mut exam: i32;
+
             println!("Enter scores for {} ({}):", subject.name, subject.code);
             loop {
+                first_test = -1;
+                second_test = -1;
+                exam = -1;
+
                 scan!(&mut first_test, &mut second_test, &mut exam);
-                if first_test < 0 || first_test > 20 {
-                    println!("First test score must be between 0 and 20. Please re-enter:");
+
+                if first_test < 0 || first_test > 20 || second_test < 0 || second_test > 20 || exam < 0 || exam > 60 {
+                    println!("Invalid scores entered. Please re-enter:");
                     continue;
                 }
-                if second_test < 0 || second_test > 20 {
-                    println!("Second test score must be between 0 and 20. Please re-enter:");
-                    continue;
-                }
-                if exam < 0 || exam > 60 {
-                    println!("Exam score must be between 0 and 60. Please re-enter:");
-                    continue;
-                }
+                
                 break;
             }
 
@@ -163,7 +212,8 @@ fn main() {
 
     }
 
-    println!("\n================ STUDENT RECORDS ================");
+    
+    println!("\nHHHHHHHHHHHHHHH RECORDA HHHHHHHHHHHHHHHHHHHHHHHHHH");
     for student in &students {
         println!("-------------------------------------------------");
         println!("Name:          {}", student.name);
@@ -171,5 +221,8 @@ fn main() {
         println!("Matric Number: {}", student.matric_number);
         println!("Calculated CGPA: {:.2} / 5.0", student.calculate_cgpa());
     }
-    println!("=================================================");
+    println!("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
+    if let Err(e) = save_to_file(&students) {
+        println!("Failed to save data: {}", e);
+    }
 }
