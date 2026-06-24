@@ -1,0 +1,287 @@
+[
+  {
+    "name": "dembele",
+    "age": 22,
+    "matric_number": 202211,
+    "courses": [
+      {
+        "name": "Elementary Mathematics I",
+        "code": "MTH101",
+        "score": [
+          {
+            "first_test": 20,
+            "second_test": 20,
+            "exam": 22
+          }
+        ]
+      },
+      {
+        "name": "General Physics I",
+        "code": "PHY101",
+        "score": [
+          {
+            "first_test": 20,
+            "second_test": 20,
+            "exam": 32
+          }
+        ]
+      },
+      {
+        "name": "General Chemistry I",
+        "code": "CHM101",
+        "score": [
+          {
+            "first_test": 20,
+            "second_test": 20,
+            "exam": 30
+          }
+        ]
+      },
+      {
+        "name": "Biology For Physical Sciences",
+        "code": "BIO101",
+        "score": [
+          {
+            "first_test": 20,
+            "second_test": 20,
+            "exam": 19
+          }
+        ]
+      },
+      {
+        "name": "Workshop Practice I",
+        "code": "ENG101",
+        "score": [
+          {
+            "first_test": 20,
+            "second_test": 20,
+            "exam": 40
+          }
+        ]
+      },
+      {
+        "name": "Engineering Drawing I",
+        "code": "ENG103",
+        "score": [
+          {
+            "first_test": 10,
+            "second_test": 19,
+            "exam": 31
+          }
+        ]
+      },
+      {
+        "name": "Use of English I",
+        "code": "GST101",
+        "score": [
+          {
+            "first_test": 20,
+            "second_test": 10,
+            "exam": 31
+          }
+        ]
+      },
+      {
+        "name": "Humanities",
+        "code": "GST103",
+        "score": [
+          {
+            "first_test": 12,
+            "second_test": 11,
+            "exam": 25
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mbappe",
+    "age": 21,
+    "matric_number": 220909,
+    "courses": [
+      {
+        "name": "Elementary Mathematics I",
+        "code": "MTH101",
+        "score": [
+          {
+            "first_test": 20,
+            "second_test": 20,
+            "exam": 60
+          }
+        ]
+      },
+      {
+        "name": "General Physics I",
+        "code": "PHY101",
+        "score": [
+          {
+            "first_test": 15,
+            "second_test": 16,
+            "exam": 60
+          }
+        ]
+      },
+      {
+        "name": "General Chemistry I",
+        "code": "CHM101",
+        "score": [
+          {
+            "first_test": 17,
+            "second_test": 10,
+            "exam": 60
+          }
+        ]
+      },
+      {
+        "name": "Biology For Physical Sciences",
+        "code": "BIO101",
+        "score": [
+          {
+            "first_test": 13,
+            "second_test": 14,
+            "exam": 60
+          }
+        ]
+      },
+      {
+        "name": "Workshop Practice I",
+        "code": "ENG101",
+        "score": [
+          {
+            "first_test": 20,
+            "second_test": 17,
+            "exam": 50
+          }
+        ]
+      },
+      {
+        "name": "Engineering Drawing I",
+        "code": "ENG103",
+        "score": [
+          {
+            "first_test": 20,
+            "second_test": 14,
+            "exam": 45
+          }
+        ]
+      },
+      {
+        "name": "Use of English I",
+        "code": "GST101",
+        "score": [
+          {
+            "first_test": 20,
+            "second_test": 20,
+            "exam": 60
+          }
+        ]
+      },
+      {
+        "name": "Humanities",
+        "code": "GST103",
+        "score": [
+          {
+            "first_test": 20,
+            "second_test": 20,
+            "exam": 52
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kobe",
+    "age": 17,
+    "matric_number": 290909,
+    "courses": [
+      {
+        "name": "Elementary Mathematics I",
+        "code": "MTH101",
+        "score": [
+          {
+            "first_test": 15,
+            "second_test": 19,
+            "exam": 55
+          }
+        ]
+      },
+      {
+        "name": "General Physics I",
+        "code": "PHY101",
+        "score": [
+          {
+            "first_test": 19,
+            "second_test": 19,
+            "exam": 55
+          }
+        ]
+      },
+      {
+        "name": "General Chemistry I",
+        "code": "CHM101",
+        "score": [
+          {
+            "first_test": 17,
+            "second_test": 19,
+            "exam": 59
+          }
+        ]
+      },
+      {
+        "name": "Biology For Physical Sciences",
+        "code": "BIO101",
+        "score": [
+          {
+            "first_test": 18,
+            "second_test": 19,
+            "exam": 59
+          }
+        ]
+      },
+      {
+        "name": "Workshop Practice I",
+        "code": "ENG101",
+        "score": [
+          {
+            "first_test": 20,
+            "second_test": 19,
+            "exam": 55
+          }
+        ]
+      },
+      {
+        "name": "Engineering Drawing I",
+        "code": "ENG103",
+        "score": [
+          {
+            "first_test": 19,
+            "second_test": 19,
+            "exam": 50
+          }
+        ]
+      },
+      {
+        "name": "Use of English I",
+        "code": "GST101",
+        "score": [
+          {
+            "first_test": 19,
+            "second_test": 18,
+            "exam": 57
+          }
+        ]
+      },
+      {
+        "name": "Humanities",
+        "code": "GST103",
+        "score": [
+          {
+            "first_test": 20,
+            "second_test": 19,
+            "exam": 55
+          }
+        ]
+      }
+    ]
+  }
+]
