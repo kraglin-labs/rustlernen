@@ -184,11 +184,12 @@ fn tokenize(words: &Vec<String>) -> Vec<String> {
 
 
 
-
+#[allow(unused_variables)]
+#[allow(unused_mut)]
 fn main() {
     let s = "Hello nicky, How do you Do today?";
     let (mut content, _length) = finder(&s);
-    tokens = tokenize(&content);
+    let tokens = tokenize(&content);
     let (total, average) = sentence_anal(&content);
 
     println!("{:#?}", content);
