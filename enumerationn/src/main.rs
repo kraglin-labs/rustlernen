@@ -153,7 +153,7 @@ fn get_info_cool(person: SchoolMember) -> (Option<String>, Option<f32>) {
     (Some(name), Some(cgpa))
 }
 fn main() {
-    let person1 = SchoolMember::Student{name: "Damien".to_string(), cgpa: 4.7f32};
+    let _person1 = SchoolMember::Student{name: "Damien".to_string(), cgpa: 4.7f32};
     let person2 = SchoolMember::Teacher{name: "Alek".to_string(), id: "39151f".to_string()};
     
     if let (Some(name), Some(grade)) = get_info_cool(person2) {
