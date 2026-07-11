@@ -1,5 +1,9 @@
-mod bank;
- 
+/*
+	renamed bank.rs to mod.rs
+*/
+
+mod bank ;
+
 fn main() {
 	let mut account = bank::accounts::Account::new("Sakis");
 	println!("[ACCOUNT] created: {:?}", account);
