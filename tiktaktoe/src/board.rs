@@ -1,4 +1,4 @@
-pub fn showboard(place: Places) {
+pub fn showboard(place: &Places) {
 	println!("\n     {}  |  {}  |  {}", place.p1, place.p2, place.p3);
 	println!("    ________________");
 	println!("     {}  |  {}  |  {}", place.p4, place.p5, place.p6);
@@ -13,15 +13,15 @@ pub enum User {
 }
 
 pub struct Places {
-	p1: String,
-	p2: String,
-	p3: String,
-	p4: String,
-	p5: String,
-	p6: String,
-	p7: String,
-	p8: String,
-	p9: String,
+	pub p1: String,
+	pub p2: String,
+	pub p3: String,
+	pub p4: String,
+	pub p5: String,
+	pub p6: String,
+	pub p7: String,
+	pub p8: String,
+	pub p9: String,
 }
 
 pub enum Position{
